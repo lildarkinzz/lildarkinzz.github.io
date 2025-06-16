@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>𝗜𝗻𝗳𝗼 𝗯𝘆 𝗟𝗶𝗹 𝗗𝗮𝗿𝗸𝗶𝗻𝘇𝘇</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Estilo del video de fondo */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 90%;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.4);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 25px;
+      color: #00ffff;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      font-weight: 600;
+    }
+
+    .links a {
+      display: block;
+      width: 100%;
+      margin: 10px auto;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: rgba(0, 255, 255, 0.2);
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .links a:hover {
+      background-color: rgba(0, 255, 255, 0.5);
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .links a {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎥 Video de fondo -->
+  <video autoplay loop playsinline id="bg-video">
+    <source src="https://i.imgur.com/JUZ2Fd1.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+  </video>
+
+  <!-- Contenido -->
+  <div class="container">
+    <h1>𝗜𝗻𝗳𝗼 𝗯𝘆 𝗟𝗶𝗹 𝗗𝗮𝗿𝗸𝗶𝗻𝘇𝘇</h1>
+    <div class="links">
+      <a href="https://discord.gg/rHKztrRp" target="_blank">💬 Discord</a>
+      <a href="https://open.spotify.com/user/31mpotwj4gs4a37onshvb76nzxxe" target="_blank">🎵 Spotify Playlists</a>
+      <a href="https://www.tiktok.com/@lil_darkinzz" target="_blank">🎥 TikTok</a>
+      <a href="https://www.instagram.com/lil_darkinzz" target="_blank">📸 Instagram</a>
+      <a href="https://t.me/+AuMqo-xYIBUwNzMx" target="_blank">🎮 Comunidad Minecraft</a>
+    </div>
+  </div>
+
+</body>
+</html>
