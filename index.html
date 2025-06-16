@@ -6,6 +6,10 @@
   <title>InfobyLilDarkinzz.com</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     #bg-video {
       position: fixed;
       top: 0;
@@ -13,6 +17,7 @@
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+      object-position: center;
       z-index: -1;
     }
 
@@ -28,86 +33,115 @@
       min-height: 100vh;
       text-align: center;
       flex-direction: column;
+      padding: 20px;
     }
 
     .container {
-      width: 90%;
-      max-width: 500px;
-      margin: 20px auto;
+      width: 100%;
+      max-width: 450px;
       padding: 25px;
-      background: rgba(0, 0, 0, 0.65);
-      border-radius: 20px;
-      box-shadow: 0px 0px 25px rgba(0, 255, 150, 0.5);
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(0, 255, 170, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(0, 255, 170, 0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: pulseLogo 3s infinite;
+    }
+
+    .logo:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 0 35px rgba(0, 255, 200, 0.8);
+    }
+
+    @keyframes pulseLogo {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(0, 255, 170, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 35px rgba(0, 255, 200, 0.9);
+      }
     }
 
     h1 {
-      font-size: 2.4em;
-      margin-bottom: 25px;
+      font-size: 2.3em;
+      margin-bottom: 20px;
       color: #00ffaa;
-      text-shadow: 0 0 15px rgba(0, 255, 150, 0.7);
+      text-shadow: 0 0 15px rgba(0, 255, 150, 0.6);
       font-weight: 600;
     }
 
     .links {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      gap: 15px;
+      margin-bottom: 30px;
     }
 
     .links a {
       display: block;
       width: 100%;
-      max-width: 300px;
-      padding: 12px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #00ffaa 0%, #00ffff 100%);
+      padding: 14px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00ffaa, #00ffff);
       color: #000;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 15px rgba(0, 255, 150, 0.4);
+      box-shadow: 0 0 12px rgba(0, 255, 200, 0.3);
       transition: all 0.3s ease;
     }
 
     .links a:hover {
-      background: linear-gradient(135deg, #00ffff 0%, #00ffaa 100%);
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+      background: linear-gradient(135deg, #00ffff, #00ffaa);
+      box-shadow: 0 0 20px rgba(0, 255, 220, 0.5);
     }
 
     .audio-player {
-      margin-top: 30px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 200, 255, 0.4);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
     }
 
     .audio-player label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: #00eaff;
       font-weight: 500;
     }
 
     audio {
       width: 100%;
+      border-radius: 10px;
       outline: none;
-      border-radius: 8px;
     }
 
     #unmuteBtn {
-      margin-top: 10px;
+      margin-top: 12px;
       padding: 10px 20px;
       font-weight: bold;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       background: linear-gradient(135deg, #00ffaa, #00ffff);
       color: #000;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
       display: none;
-      transition: transform 0.2s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
+      transition: all 0.2s ease;
     }
 
     #unmuteBtn:hover {
@@ -117,11 +151,21 @@
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2em;
+        font-size: 1.8em;
       }
 
       .links a {
-        font-size: 1em;
+        font-size: 0.95em;
+        padding: 12px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
       }
     }
   </style>
@@ -136,7 +180,13 @@
 
   <!-- Contenido -->
   <div class="container">
+    <!-- 🖼️ Logo -->
+    <div class="logo-container">
+      <img src="https://i.imgur.com/0y8Ftya.png" alt="Logo de LilDarkinzz" class="logo" />
+    </div>
+
     <h1>𝗜𝗻𝗳𝗼 𝗯𝘆 𝗟𝗶𝗹 𝗗𝗮𝗿𝗸𝗶𝗻𝘇𝘇</h1>
+
     <div class="links">
       <a href="https://discord.gg/rHKztrRp" target="_blank">💬 Discord</a>
       <a href="https://open.spotify.com/user/31mpotwj4gs4a37onshvb76nzxxe" target="_blank">🎵 Spotify Playlists</a>
@@ -145,18 +195,18 @@
       <a href="https://t.me/+AuMqo-xYIBUwNzMx" target="_blank">🎮 Comunidad Minecraft</a>
     </div>
 
-    <!-- 🎧 Apartado de audio -->
+    <!-- 🎧 Audio -->
     <div class="audio-player">
       <label for="audio">🎧 Reproductor musical:</label>
-      <audio id="audio" autoplay muted>
-        <source src="https://github.com/lildarkinzz/lildarkinzz.github.io/blob/main/Sweden%20%20%20C418.mp3" type="audio/mp3">
+      <audio id="audio" autoplay>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
         Tu navegador no soporta el elemento de audio.
       </audio>
-      <button id="unmuteBtn">🔊 Activar sonido</button>
+      <button id="unmuteBtn">🔊 Song </button>
     </div>
   </div>
 
-  <!-- 🔊 Script para activar sonido si está bloqueado -->
+  <!-- 🔊 Script -->
   <script>
     const audio = document.getElementById('audio');
     const unmuteBtn = document.getElementById('unmuteBtn');
@@ -182,7 +232,7 @@
       unmuteBtn.style.display = 'none';
     });
   </script>
-
 </body>
 </html>
+
 
